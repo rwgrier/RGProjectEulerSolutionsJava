@@ -25,15 +25,20 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class Problem1Test {
+public class Problem2Test {
 
     @Test
     public void testKnownSample() {
-        assertEquals(23, Problem1.sumOddNumbersUpTo(10));
+        // Under 100
+        // 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+        // Evens
+        // 2, 8, 34
+        long knownAnswer = 44L;
+        assertEquals(knownAnswer, Problem2.sumEvenFibonacciNumbersUpTo(100L));
     }
     
     @Test
     public void testActualSolution() {
-        assertEquals(233168, Problem1.sumOddNumbersUpTo(1000));
+        assertEquals(4613732L, Problem2.sumEvenFibonacciNumbersUpTo(4000000L));
     }
 }
