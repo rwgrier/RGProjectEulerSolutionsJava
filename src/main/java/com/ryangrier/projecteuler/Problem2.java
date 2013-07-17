@@ -22,7 +22,7 @@
 package com.ryangrier.projecteuler;
 
 import java.math.BigInteger;
-import java.util.ArrayList;
+import java.util.List;
 
 import com.ryangrier.util.FibonacciUtil;
 
@@ -42,7 +42,7 @@ public class Problem2 {
     public static final long sumEvenFibonacciNumbersUpTo(long maxLong) {
         long sum = 0;
         BigInteger maxValue = BigInteger.valueOf(maxLong);
-        ArrayList<BigInteger> fibonacciNumbers = FibonacciUtil.generateFibonacciListUpToValue(maxValue);
+        List<BigInteger> fibonacciNumbers = FibonacciUtil.generateFibonacciListUpToValue(maxValue);
         
         for (BigInteger each : fibonacciNumbers) {
             long eachValue = each.longValue();

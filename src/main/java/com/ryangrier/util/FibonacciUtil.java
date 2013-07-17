@@ -23,8 +23,13 @@ package com.ryangrier.util;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.List;
 
 public class FibonacciUtil {
+    
+//    private static final BigDecimal SQRT_FIVE = new BigDecimal("2.23606798");
+//    private static final BigDecimal GOLDEN_RATIO = new BigDecimal("1.6180339888");
+//    private static final BigDecimal ONE_MINUS_GOLDEN_RATIO = new BigDecimal("-0.61803399");
     
     /**
      * Returns an ArrayList of Fibonacci numbers up to a given value. The maxValue will not be included. 
@@ -32,7 +37,7 @@ public class FibonacciUtil {
      * @param maxValue The max value of the Fibonacci number. This will not be included in any results.
      * @return An ArrayList of Fibonacci numbers up to a given value.
      */
-    public static final ArrayList<BigInteger> generateFibonacciListUpToValue(BigInteger maxValue) {
+    public static final List<BigInteger> generateFibonacciListUpToValue(BigInteger maxValue) {
         ArrayList<BigInteger> fibonacciNumbers = new ArrayList<BigInteger>();
         int index = 0;
         BigInteger newFibonacci = fastFibonacciDoubling(index++);
@@ -45,6 +50,21 @@ public class FibonacciUtil {
         return fibonacciNumbers;
     }
     
+//    public static final BigInteger goldenRuleFibonacci(int n) {
+//        if (n == 0) {
+//            return BigInteger.ZERO;
+//        } else if (n == 1) {
+//            return BigInteger.ONE;
+//        }
+//        
+//        
+//        BigDecimal numerator = GOLDEN_RATIO.pow(n).subtract(ONE_MINUS_GOLDEN_RATIO.pow(n));
+//        BigDecimal answer = numerator.divide(SQRT_FIVE, RoundingMode.HALF_UP);
+//        
+//        
+//        return answer.round(MathContext.DECIMAL32).toBigInteger();
+//    }
+    
     /** 
      * Fast doubling method. Faster than the matrix method.
      * F(2n) = F(n) * (2*F(n+1) - F(n))
@@ -52,7 +72,7 @@ public class FibonacciUtil {
      * 
      * Taken from here: http://nayuki.eigenstate.org/res/fast-fibonacci-algorithms/fastfibonacci.java
      */
-    private static BigInteger fastFibonacciDoubling(int n) {
+    public static BigInteger fastFibonacciDoubling(int n) {
         BigInteger a = BigInteger.ZERO;
         BigInteger b = BigInteger.ONE;
 //        int m = 0;
